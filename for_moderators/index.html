@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Математические игры</title>
+        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="styles/variables.css" />
+        <link rel="stylesheet" href="/common_styles/account-popup.css" />
+        <link rel="icon" href="../start-page/images/spark.ico" type="image/x-icon">
+    </head>
+    <body class="body">
+        <header class="header">
+            <div class="account">
+                <div class="account-logo">
+                    <svg class="account-logo-svg" viewBox="0 0 110.000000 106.000000">
+                        <g transform="translate(0.000000,106.000000) scale(0.100000,-0.100000)"
+                        fill="var(--account-color)" stroke="none">
+                            <path d="M300 930 l0 -50 -50 0 -50 0 0 -50 0 -50 -50 0 -50 0 0 -150 0 -150
+                            100 0 100 0 0 -200 0 -200 250 0 250 0 0 200 0 200 100 0 100 0 0 150 0 150
+                            -50 0 -50 0 0 50 0 50 -50 0 -50 0 0 50 0 50 -250 0 -250 0 0 -50z m400 -100
+                            l0 -50 50 0 50 0 0 -50 0 -50 50 0 50 0 0 -50 0 -50 -350 0 -350 0 0 50 0 50
+                            50 0 50 0 0 50 0 50 50 0 50 0 0 50 0 50 150 0 150 0 0 -50z m-200 -400 l0
+                            -50 50 0 50 0 0 50 0 50 50 0 50 0 0 -150 0 -150 -150 0 -150 0 0 150 0 150
+                            50 0 50 0 0 -50z"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <h1>Математические игры</h1>      
+            <h2>версия для модераторов</h2>  
+        </header>
+        <main>
+            <div class="events-container">
+                <div class="add-new-event">
+                    <svg class="add-new-event-svg" viewBox="0 0 388.000000 390.000000">
+                        <g transform="translate(0.000000,390.000000) scale(0.100000,-0.100000)"
+                        fill="var(--add-button-color)" stroke="none">
+                            <path d="M140 1940 l0 -1800 1800 0 1800 0 0 1800 0 1800 -1800 0 -1800 0 0
+                            -1800z m3200 0 l0 -1400 -1400 0 -1400 0 0 1400 0 1400 1400 0 1400 0 0 -1400z"/>
+                            <path d="M1740 2540 l0 -400 -400 0 -400 0 0 -200 0 -200 400 0 400 0 0 -400
+                            0 -400 200 0 200 0 0 400 0 400 400 0 400 0 0 200 0 200 -400 0 -400 0 0 400
+                            0 400 -200 0 -200 0 0 -400z"/>
+                        </g>
+                    </svg>
+                </div>
+                <h3 class="filters">фильтры:</h3>
+                
+                <ul class="events-list">
+                    <li class="events-object">
+                        <h4>00001</h4>
+                    </li>
+                    <li class="events-object">
+                        <h4>00002</h4>
+                    </li>
+                    <li class="events-object">
+                        <h4>00003</h4>
+                    </li>
+                    <li class="events-object">
+                        <h4>00004</h4>
+                    </li>
+                    <li class="events-object">
+                        <h4>00005</h4>
+                    </li>
+                    <li class="events-object">
+                        <h4>00006</h4>
+                    </li>
+                    <li class="events-object">
+                        <h4>00007</h4>
+                    </li>
+                    <li class="events-object">
+                        <h4>00008</h4>
+                    </li>
+                    <li class="events-object">
+                        <h4>00009</h4>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <footer class="footer">
+        </footer>
+        <div class="popup popup-account-info">
+                <form class="form-account-info popup__content" action="" method="post" name="account-info-form">
+                    <h3 class="account-title">Аккаунт:</h3>
+                    <div class="account-main-info">
+                        <h4 class="account-name">Пупкин Кевин</h4>
+                        <h4 class="account-username">PupaKeva</h4>
+                        <h4 class="account-email">pupaaaakevin@mail.ru</h4>
+                    </div>
+                    <div class="editor-account">
+                        <input class="popup-input form_info_account_name" type="text" name="data-start" pattern=".+@.+\..+" placeholder="Пупкин Кевин"/>
+                        <input class="popup-input form_info_account_login" type="text" name="data-start" pattern=".+@.+\..+" placeholder="Новый пароль"/>
+                    </div>
+                    
+                    <a class="submit-button edit-profile">Редактировать</a>
+                    <a class="submit-button edit-profile-done">Изменить</a>
+                </form>
+        </div>
+        <div class="popup popup-filter">
+            <form class="form-filter" action="" method="post" name="filter-form">
+                <label for="game-type">Тип игры:</label>
+                <select id="game-type" name="game-type" class="popup-input">
+                    <option value="abaka-game" class="game-list">Абака</option>
+                    <option value="domino-game" class="game-list">Домино</option>
+                    <option value="labirint-game" class="game-list">Лабиринт</option>
+                    <option value="krestiki-game" class="game-list">Крестики-нолики</option>
+                </select>
+                <label for="email">Дата начала игры</label>
+                <input class="popup-input form__input_data" type="text" name="data-start" pattern=".+@.+\..+" placeholder="../../...."/>
+                <label for="email">Дата завершения игры</label>
+                <input class="popup-input form__input_data" type="text" name="data-start" pattern=".+@.+\..+" placeholder="../../...."/>
+                <a class="submit-button apply-filter">Применить</a>
+            </form>
+        </div>
+        <div class="popup popup-add-event">
+            <form class="form-add-event" action="" method="post" name="add-event-form">
+                <label for="game-type">Тип игры:</label>
+                <select id="game-type" name="game-type" class="popup-input">
+                    <option value="abaka-game" class="game-list">Абака</option>
+                    <option value="domino-game" class="game-list">Домино</option>
+                    <option value="labirint-game" class="game-list">Лабиринт</option>
+                    <option value="krestiki-game" class="game-list">Крестики-нолики</option>
+                </select>
+                <label for="game-type">Режим игры:</label>
+                <select id="game-type" name="game-type" class="popup-input">
+                    <option value="self-game" class="game-list">Одиночный</option>
+                    <option value="competition-game" class="game-list">Соревновательный</option>
+                </select>
+                <label for="email">Информация об игре</label>
+                <input class="popup-input form__input_data" type="text" name="data-start" pattern=".+@.+\..+" placeholder="Виден игрокам"/>
+                <label for="email">Дата начала игры</label>
+                <input class="popup-input form__input_data" type="text" name="data-start" pattern=".+@.+\..+" placeholder="../../...."/>
+                <label for="email">Дата завершения игры</label>
+                <input class="popup-input form__input_data" type="text" name="data-start" pattern=".+@.+\..+" placeholder="../../...."/>
+                <label for="email">Комментарий по игре</label>
+                <input class="popup-input form__input_data" type="text" name="data-start" pattern=".+@.+\..+" placeholder="Виден только модераторам"/>
+                <a class="submit-button apply-filter">Создать</a>
+            </form>
+        </div>
+        <div class="popup popup-event-info">
+            <form class="form-event-info popup__content" action="" method="post" name="event-info-form">
+                <h3 class="event-number">Ивент 00001</h3>
+                <label for="event-type">Тип игры:</label>
+                <input class="popup-input form_info_event_event-type" type="text" name="data-start" pattern=".+@.+\..+" placeholder="Домино" disabled/>
+                <label for="game-type">Режим игры:</label>
+                <select id="game-type" name="game-type" class="popup-input" disabled>
+                    <option value="self-game" class="game-list">Одиночный</option>
+                    <option value="competition-game" class="game-list">Соревновательный</option>
+                </select>
+                <label for="email">Информация об игре</label>
+                <input class="popup-input form__input_data" type="text" name="data-start" pattern=".+@.+\..+" placeholder="Виден игрокам" disabled/>
+                <label for="email">Дата начала игры</label>
+                <input class="popup-input form__input_data" type="text" name="data-start" pattern=".+@.+\..+" placeholder="05/05/2024" disabled/>
+                <label for="email">Дата завершения игры</label>
+                <input class="popup-input form__input_data" type="text" name="data-start" pattern=".+@.+\..+" placeholder="20/06/2024" disabled/>
+                <label for="email">Комментарий по игре</label>
+                <input class="popup-input form__input_data form__input_data_last" type="text" name="data-start" pattern=".+@.+\..+" placeholder="Виден только модераторам" disabled/>
+                <div class="btn-edit-event">
+                    <a class="submit-button edit-event">Редактировать</a>
+                    <a class="submit-button edit-event-done">Изменить</a>
+                    <a class="submit-button edit-event-delete">Удалить</a>
+                </div>
+            </form>
+        </div>
+        </div>
+        <script src="scripts/main.js" type="module"></script>
+        <script src="../common_scripts/account-popup.js"></script>
+    </body>
+</html>

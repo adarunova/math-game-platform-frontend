@@ -1,0 +1,325 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('../../fonts/PressStart2P-Regular.woff') format('woff2'),
+    url('../../fonts/PressStart2P-Regular.woff') format('woff');    
+}
+
+.header
+.main
+.body
+.footer {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    display: grid;
+    background: var(--page-color);
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    position: relative;
+    display: grid;
+}
+
+
+h1 {
+    font-family: 'Press Start 2P';
+    align-self: center;
+    justify-self: center;
+    color: var(--text-color);
+    font-size: 3vw;
+}
+
+h2 {
+    font-family: 'Press Start 2P';
+    align-self: center;
+    justify-self: center;
+    color: var(--text-color);
+    font-size: min(3vw, 4vh);
+    margin-left: 20px;
+    transition: 0.4s;
+}
+
+.game-list {
+    list-style-type: none;
+}
+
+.spark {
+    width: 40px;
+    transition: 0.4s;
+}
+
+.game-object {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.game-object:hover h2 {
+    letter-spacing: 6px;
+    transform: translateX(15px);
+}
+
+.game-object:hover .spark {
+    --spark-color: #FED602;
+}
+
+.abaka-text {
+    color: var(--abaka-color);
+}
+
+.domino-text {
+    color: var(--domino-color);
+}
+
+.labirint-text {
+    color: var(--labirint-color);
+}
+
+.karusel-text {
+    color: var(--karusel-color);
+}
+
+.krestiki-noliki-text {
+    color: var(--krestiki-noliki-color);
+}
+
+.football-text {
+    color: var(--football-color);
+}
+
+.rules-text {
+    color: #000;
+}
+
+.radio-botton {
+    display: grid;
+    justify-items: end;
+    margin-right: 40px;
+}
+
+.choose-format input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.choose-format span {
+    position: relative;
+    font-family: 'Press Start 2P';
+    /* color: var(--text-color); */
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
+}
+
+.choose-format span::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border: 2.5px solid #000;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.choose-format span::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 5px;
+    top: 10px;
+    transform: translateY(-50%);
+    background-color: var(--text-color);
+    opacity: 0;
+}
+
+.choose-format input[type="radio"]:checked + span::after {
+    opacity: 1;
+}
+
+.popup_event {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.popup_event .popup__content {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 10px solid #000;
+    height: 50vh;
+    width: 40vw;
+}
+
+.event-title {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 3vw;
+    text-align: center;
+}
+
+.event-list {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.event-button {
+    height: 5vh;
+    width: 8vw;
+    border: 3px solid #000;
+    font-family: 'Press Start 2P', sans-serif;
+    transition: transform 0.2s ease-out;
+}
+
+.event-button:hover {
+    border: 3px solid #FE5D02;
+    transform: scale(1.1);
+
+}
+
+.popup_user_info {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.popup_user_info .popup__content {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 10px solid #000;
+    height: 60vh;
+    width: 40vw;
+    gap: 20px;
+    grid-template-rows: 10vh 7vh 7vh 7vh 7vh 7vh;
+    justify-items: center
+}
+
+.popup_user_info .event-title {
+    font-size: 4vh;
+}
+
+.popup_user_info h4 {
+    font-size: 2vh;
+}
+
+.event_in_btn {
+    border: 0;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 2.4vh;
+    transition: transform 0.2s ease-out;
+    background: transparent;
+}
+
+.event_in_btn:hover {
+    color: #FE5D02;
+    transform: scale(1.05);
+
+}
+
+/* error-popup */
+.popup_error_message {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.popup_error_message .popup__content {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 10px solid #000;
+    height: 25vh;
+    width: 40vw;
+}
+
+.popup-title {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 3vw;
+    text-align: center;
+}
+
+
+.popup-text {
+    text-align: center;
+}
+
+
+
+/* медиа-забросы для мобильных утройств w-360, h-640*/
+
+@media (440px >= width) and (360px <= width) {
+    .account-logo-svg {
+        width: 10vw;
+    }
+
+    h1 {
+        font-size: 4vw;
+        overflow-wrap: break-word;
+        text-align: center;
+        width: 70%;
+    }
+    h2 {
+        font-size: min(6vw, 8vh);
+        padding-right: 30px;
+    }
+    .game-object {
+        display: flex;
+        justify-content: start;
+    }
+
+    .spark {
+        width: 20px;
+    }
+
+    .choose-format span {
+        font-size: 3vw;
+    }
+
+}
+  
+@media (376px >= width) {
+
+}

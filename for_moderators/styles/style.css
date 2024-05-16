@@ -1,0 +1,492 @@
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('../../fonts/PressStart2P-Regular.woff') format('woff2'),
+    url('../../fonts/PressStart2P-Regular.woff') format('woff');    
+}
+
+.header
+.main
+.body
+.footer {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    display: grid;
+    background: var(--page-color);
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    position: relative;
+    display: grid;
+    height: 25vh;
+}
+
+main {
+    height: 65vh;
+}
+
+
+h1 {
+    font-family: 'Press Start 2P';
+    align-self: end;
+    justify-self: center;
+    color: var(--text-color);
+    font-size: 3vw;
+}
+
+h2 {
+    font-family: 'Press Start 2P';
+    align-self: start;
+    justify-self: center;
+    color: var(--text-color);
+    font-size: min(2vw, 2vh);
+    margin-left: 20px;
+    transition: 0.4s;
+}
+
+/* main {
+    display: block;
+} */
+
+.events-container {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    padding-left: min(35vw, 25vh);
+    padding-right: min(35vw, 25vh);
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.add-new-event {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.add-new-event .add-new-event-svg:hover {
+    --add-button-color: #FE5D02;
+    transform: scale(1.1);
+}
+
+.add-new-event-svg {
+    width: 40px;
+}
+
+.filters {
+    position: relative;
+    font-family: 'Press Start 2P';
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    justify-self: end;
+    transition: visibility 0s linear 300ms, opacity 400ms;
+}
+
+.filters:after {
+	display: block;
+	position: absolute;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 6px; /*задаём ширину линии*/
+	background-color: #FE5D02; /*задаём цвет линии*/
+	content: "";
+	transition: width 0.3s ease-out; /*задаём время анимации*/
+
+}
+
+.filters:hover:after,
+.filters:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
+
+.events-list {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    gap: 50px;
+    padding: 0px;
+}
+
+.events-object {
+    list-style-type: none;
+    width: 100%;
+    border: #FE5D02 solid 3px;
+    transition: transform 0.2s ease-out
+}
+
+.events-object:hover {
+    transform: scale(1.06);
+}
+
+h4 {
+    display: grid;
+    justify-items: center;
+    font-family: 'Press Start 2P';
+    font-size: 1vw;
+}
+
+.spark {
+    width: 40px;
+    transition: 0.4s;
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup_event {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.popup_event .popup__content {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 10px solid #000;
+    height: 60vh;
+    width: 50vw;
+}
+
+.event-title {
+    font-family: 'Press Start 2P';
+    font-size: 3vw;
+    text-align: center;
+}
+
+.event-list {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.event-button {
+    height: 5vh;
+    width: 8vw;
+    border: 3px solid #000;
+}
+
+
+/* фильтр попап */
+.popup-filter {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 1vw;
+    /* visibility: hidden;
+    opacity: 0; */
+    display: none;
+    /* display: block; */
+    flex-direction: column;
+    transition: visibility 0s linear 300ms, opacity 400ms;
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: max(3vw, 4vh);
+    left: calc(20px + 5vw + 10px);
+    bottom: 0;
+    z-index: 20;
+    align-items: start;
+    justify-content: start;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup-filter label {
+    align-self: center ;
+}
+
+.popup-input {
+    height: 40px;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 0.8vw;
+}
+
+.game-list {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 0.8vw;
+}
+
+.popup_active {
+    display: grid;
+    /* visibility: visible;
+    opacity: 1; */
+    transition: visibility 0s linear 0s, opacity 400ms;
+} 
+
+.popup-filter .form-filter {
+    background-color: #e3e3e3;
+    border: 5px dashed #000;
+    /* height: 50vh; */
+    width: 30vw;
+    border-radius: 5%;
+}
+
+.form-filter  {
+    padding: 30px;
+    display: grid;
+    overflow-x:hidden
+}
+
+.apply-filter {
+    justify-self: center;
+    align-self: center;
+    transition: color 0.2s ease-out;
+}
+
+.apply-filter:hover {
+    justify-self: center;
+    align-self: center;
+    color: #FE5D02;
+}
+
+/* создание ивента попап */
+
+.popup-add-event {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    /* visibility: hidden;
+    opacity: 0; */
+    display: none;
+    transition: visibility 0s linear 300ms, opacity 400ms;
+    position: fixed;
+    top: max(3vw, 4vh);
+    background-color: rgba(0, 0, 0, .5);
+    left: calc(20px + 5vw + 10px);
+    z-index: 20;
+    align-items: start;
+    justify-content: start;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup_active {
+    display: grid;
+    /* visibility: visible;
+    opacity: 1; */
+    transition: visibility 0s linear 0s, opacity 400ms;
+} 
+
+.popup-add-event .popup__content {
+    background-color: #e3e3e3;
+    border: 5px dashed #000;
+    /* height: 50vh; */
+    width: 30vw;
+    border-radius: 5%;
+}
+
+.popup-add-event label {
+    align-self: center ;
+}
+
+.popup-input {
+    height: 40px;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 0.8vw;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.game-list {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 0.8vw;
+}
+
+.popup_active {
+    display: grid;
+    /* visibility: visible;
+    opacity: 1; */
+    transition: visibility 0s linear 0s, opacity 400ms;
+} 
+
+.popup-add-event .form-add-event {
+    background-color: #e3e3e3;
+    border: 5px dashed #000;
+    height: 60vh;
+    width: 40vw;
+    border-radius: 5%;
+}
+
+.form-add-event  {
+    padding: 40px;
+    display: grid;
+    overflow-x:hidden
+}
+
+/* попап инфа о ивенте */
+.popup-event-info {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 1vw;
+    /* visibility: hidden;
+    opacity: 0; */
+    display: none;
+    background-color: rgba(0, 0, 0, .5);
+    /* display: block; */
+    flex-direction: column;
+    transition: visibility 0s linear 300ms, opacity 400ms;
+    position: fixed;
+    top: max(3vw, 4vh);
+    left: calc(20px + 5vw + 10px);
+    bottom: 0;
+    z-index: 20;
+    align-items: start;
+    justify-content: start;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.popup-event-info label {
+    align-self: center ;
+}
+
+.popup-input {
+    height: 40px;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 0.8vw;
+}
+
+.game-list {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    font-size: 0.8vw;
+}
+
+.popup_active {
+    display: grid;
+    /* visibility: visible;
+    opacity: 1; */
+    transition: visibility 0s linear 0s, opacity 400ms;
+} 
+
+.popup-event-info .form-event-info {
+    background-color: #e3e3e3;
+    border: 5px dashed #000;
+    /* height: 60vh; */
+    width: 50vw;
+    border-radius: 5%;
+}
+
+.form-event-info  {
+    padding: 40px;
+    display: grid;
+    overflow-x: hidden;
+}
+/* .edit-event {
+    justify-self: center;
+    align-self: center;
+    transition: color 0.2s ease-out;
+} */
+
+.edit-event:hover {
+    justify-self: center;
+    align-self: center;
+    color: #FE5D02;
+}
+
+.edit-event-done:hover {
+    justify-self: center;
+    align-self: center;
+    color: #FE5D02;
+}
+
+.btn-edit-event {
+    position: relative;
+    display: block;
+}
+
+.edit-event {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    align-self: center;
+    justify-self: center;
+    transition: color 0.2s ease-out;
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    bottom: -15px;
+}
+
+.edit-event-done {
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    transition: color 0.2s ease-out;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    bottom: -15px;
+    left: 5px;
+}
+
+.edit-event-delete {
+    display: block;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    transition: color 0.2s ease-out;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    color:#b40000;
+    bottom: -15px;
+    right: 10px;
+}
+
+/* медиа-забросы для мобильных утройств w-360, h-640*/
+
+@media (440px >= width) and (360px <= width) {
+    .account-logo-svg {
+        width: 10vw;
+    }
+
+    h1 {
+        font-size: 4vw;
+        overflow-wrap: break-word;
+        text-align: center;
+        width: 70%;
+    }
+    h2 {
+        font-size: min(6vw, 8vh);
+        padding-right: 30px;
+    }
+    
+    .events-container {
+        padding-left: min(30vw, 10vh);
+        padding-right: min(30vw, 10vh);
+    }
+
+    .spark {
+        width: 20px;
+    }
+
+}
+  
+@media (376px >= width) {
+
+}

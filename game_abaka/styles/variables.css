@@ -1,0 +1,7 @@
+:root {
+    --square-color: transparent;
+    --square-passed-color: rgb(126, 9, 152);
+    --square-no-passed-color: rgb(148, 148, 148);
+    --menu-color: black;
+    --button-text-color: black;
+}

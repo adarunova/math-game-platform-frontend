@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Математические игры</title>
+        <link rel="stylesheet" href="styles/variables.css" />
+        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="icon" href="../start-page/images/spark.ico" type="image/x-icon">
+    </head>
+    <body class="body">
+        <header class="header">
+            <h1>Математические игры</h1>
+        </header>
+        <main>
+            <div class="container">
+                <div class="frame">
+                  <div class="nav">
+                    <ul class="links">
+                      <li class="signin-button signin-active"><a class="btn">Вход</a></li>
+                      <li class="signup-button signup-inactive"><a class="btn">Регистрация</a></li>
+                    </ul>
+                  </div>
+                <form class="form-sign form-signin signin-active" action="" method="post" name="sign-in-form">
+                    <label for="username">Имя пользователя</label>
+                    <input class="form-styling form__input_username" type="text" name="username" value=" " placeholder="" minlength="2" maxlength="40" data-error-message="Разрешены только латинские буквы, кирилица, пробелы и дифисы" required/>
+                    <span class="error-message form__input_username-error"></span>
+                    <label for="password">Пароль</label>
+                    <input class="form-styling form__input_password" type="text" name="password" value=" " placeholder="" autocomplete="off" minlength="8" maxlength="16" data-error-message="Длина пароля должна быть от 8 до 16 символов и включать одну заглавную букву, и одну цифру" required/>
+                    <span class="error-message form__input_password-error"></span>
+                    <button class="reset-password">Обновить пароль</button>
+                    <div class="btn-animate">
+                      <a class="submit-button btn-signin inactive__submit-button">Вход</a>
+                    </div>
+                </form>
+              
+                <form class="form-sign form-signup signin-inactive" action="" method="post" name="sign-up-form">
+                    <label for="fullname">Имя пользователя</label>
+                    <input class="form-styling form__input_fullname" type="text" name="fullname" placeholder="" minlength="2" maxlength="40" data-error-message="Разрешены только латинские буквы, кирилица, пробелы и дифисы" required/>
+                    <span class="error-message form__input_fullname-error"></span>
+                    <label for="email">Почта</label>
+                    <input class="form-styling form__input_email" type="text" name="email" pattern=".+@.+\..+" placeholder="" data-error-message="Пожалуйста, введите корректный email-адрес"/>
+                    <span class="error-message form__input_email-error"></span>
+                    <a ng-click="checked = !checked" class="submit-button btn-signup inactive__submit-button">Регистрация</a>
+                </form>
+
+                <form class="form-sign form-reset-password signin-inactive" action="" method="post" name="sign-in-form">
+                  <label for="email">Почта</label>
+                  <input class="form-styling form__input_email" type="text" name="email" pattern=".+@.+\..+" placeholder="" data-error-message="Пожалуйста, введите корректный email-адрес"/>
+                  <span class="error-message form__input_email-error"></span>
+                  <label for="new-password">Новый пароль</label>
+                  <input class="form-styling form__input_password" type="text" name="password" placeholder="" autocomplete="off" minlength="8" maxlength="16" data-error-message="Длина пароля должна быть от 8 до 16 символов и включать одну заглавную букву, и одну цифру" required/>
+                  <span class="error-message form__input_password-error"></span>
+                  <div class="btn-animate"> 
+                    <a class="submit-button btn-reset-password inactive__submit-button">Восстановить пароль</a>
+                  </div>
+                </form>
+                </div>
+              </div>
+        </main>
+        <footer class="footer">
+        </footer>
+        <!-- <script src="../common_scripts/side-bar.js" type="module"></script> -->
+        <script src="./scripts/main.js" type="module"></script>
+    </body>
+</html>
